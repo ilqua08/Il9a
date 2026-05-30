@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résumé des Relations — A.D.C. 2 STE</title>
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --primary:#1e3a8a;
+    --primary-soft:#dbeafe;
+    --accent:#0ea5e9;
+    --accent-soft:#e0f2fe;
+    --green:#10b981;
+    --green-soft:#d1fae5;
+    --orange:#f59e0b;
+    --orange-soft:#fef3c7;
+    --pink:#ec4899;
+    --pink-soft:#fce7f3;
+    --purple:#8b5cf6;
+    --purple-soft:#ede9fe;
+    --red:#ef4444;
+    --red-soft:#fee2e2;
+    --text:#0f172a;
+    --muted:#64748b;
+    --border:#e2e8f0;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    margin:0; padding:24px;
+    line-height:1.6;
+  }
+  header{
+    text-align:center;
+    background:linear-gradient(135deg,#1e3a8a,#0ea5e9);
+    color:#fff;
+    padding:30px 20px;
+    border-radius:16px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(30,58,138,0.25);
+  }
+  header h1{margin:0;font-size:28px;letter-spacing:.5px}
+  header p{margin:8px 0 0;opacity:.9;font-size:15px}
+  .container{max-width:1100px;margin:0 auto}
+  .toc{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:18px 22px; margin-bottom:26px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.04);
+  }
+  .toc h2{margin:0 0 10px;font-size:18px;color:var(--primary)}
+  .toc ol{margin:0;padding-left:22px;columns:2;column-gap:30px}
+  .toc li{margin:4px 0;break-inside:avoid}
+  .toc a{color:var(--primary);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .lesson{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:22px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  }
+  .lesson h2{
+    margin:0;
+    padding:14px 20px;
+    color:#fff;
+    font-size:18px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .lesson h2 .num{
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    width:30px;height:30px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;
+  }
+  .lesson .body{padding:18px 22px}
+  .sub{
+    color:var(--primary);
+    font-weight:600;
+    margin:14px 0 6px;
+    padding:6px 10px;
+    background:var(--primary-soft);
+    border-left:4px solid var(--primary);
+    border-radius:6px;
+    display:inline-block;
+  }
+  ul.relations{
+    list-style:none;
+    padding:0;margin:8px 0 0;
+  }
+  ul.relations li{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:8px 0;
+    font-size:17px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  ul.relations li:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(0,0,0,0.08);
+  }
+  /* Couleurs par chapitre */
+  .c1 h2{background:linear-gradient(135deg,#1e3a8a,#3b82f6)}
+  .c2 h2{background:linear-gradient(135deg,#0ea5e9,#06b6d4)}
+  .c3 h2{background:linear-gradient(135deg,#10b981,#059669)}
+  .c4 h2{background:linear-gradient(135deg,#f59e0b,#d97706)}
+  .c5 h2{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+  .c6 h2{background:linear-gradient(135deg,#ec4899,#be185d)}
+  .c7 h2{background:linear-gradient(135deg,#ef4444,#b91c1c)}
+  .c8 h2{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+  footer{
+    text-align:center;color:var(--muted);font-size:13px;margin-top:30px;
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    header{box-shadow:none}
+    .lesson{break-inside:avoid;box-shadow:none}
+  }
+  @media (max-width:700px){
+    .toc ol{columns:1}
+    header h1{font-size:22px}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📘 Résumé des Relations — A.D.C. 2 STE</h1>
+  <p>Toutes les relations par leçon · sans explication · format clair</p>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <h2>📑 Table des leçons</h2>
+  <ol>
+    <li><a href="#l1">Courant alternatif monophasé</a></li>
+    <li><a href="#l2">Courant alternatif triphasé</a></li>
+    <li><a href="#l3">Transformateur monophasé</a></li>
+    <li><a href="#l4">Alternateur triphasé</a></li>
+    <li><a href="#l5">Moteur synchrone triphasé</a></li>
+    <li><a href="#l6">Moteur asynchrone triphasé</a></li>
+    <li><a href="#l7">Moteurs pas à pas</a></li>
+    <li><a href="#l8">Convertisseurs statiques</a></li>
+    <li><a href="#l9">Transformateur triphasé</a></li>
+    <li><a href="#l10">Protection des personnes</a></li>
+    <li><a href="#l11">Protection électrique des matériels</a></li>
+  </ol>
+</nav>
+
+<!-- 1. Courant alternatif monophasé -->
+<section class="lesson c1" id="l1">
+  <h2><span class="num">1</span> Courant alternatif monophasé</h2>
+  <div class="body">
+
+    <div class="sub">Tensions et courants instantanés</div>
+    <ul class="relations">
+      <li>\( v(t) = V\sqrt{2}\,\sin(\omega t) \)</li>
+      <li>\( i(t) = I\sqrt{2}\,\sin(\omega t - \varphi) \)</li>
+      <li>\( V = Z \cdot I \)</li>
+    </ul>
+
+    <div class="sub">Dipôles élémentaires</div>
+    <ul class="relations">
+      <li>Résistance : \( u = R \cdot i \) ; \( U = R \cdot I \) ; \( \varphi = 0 \)</li>
+      <li>Inductance : \( u = L\,\dfrac{di}{dt} \) ; \( U = L\,\omega\,I \) ; \( \varphi = \dfrac{\pi}{2} \)</li>
+      <li>Condensateur : \( i = C\,\dfrac{du}{dt} \) ; \( U = \dfrac{I}{\omega C} \) ; \( \varphi = -\dfrac{\pi}{2} \)</li>
+    </ul>
+
+    <div class="sub">Puissances</div>
+    <ul class="relations">
+      <li>\( P = V \cdot I \cdot \cos\varphi \)</li>
+      <li>\( Q = V \cdot I \cdot \sin\varphi \)</li>
+      <li>\( S = \sqrt{P^{2} + Q^{2}} = V \cdot I \)</li>
+      <li>\( \cos\varphi = \dfrac{P}{S} \)</li>
+    </ul>
+
+    <div class="sub">Relèvement du facteur de puissance</div>
+    <ul class="relations">
+      <li>\( C = \dfrac{P\,(\tan\varphi - \tan\varphi')}{V^{2}\,\omega} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 2. Courant alternatif triphasé -->
+<section class="lesson c2" id="l2">
+  <h2><span class="num">2</span> Courant alternatif triphasé</h2>
+  <div class="body">
+
+    <div class="sub">Réseau triphasé équilibré</div>
+    <ul class="relations">
+      <li>\( V_{1} = V_{2} = V_{3} = V \)</li>
+      <li>\( U_{12} = U_{23} = U_{31} = U \)</li>
+      <li>\( U = \sqrt{3}\,V \)</li>
+    </ul>
+
+    <div class="sub">Montage étoile</div>
+    <ul class="relations">
+      <li>\( I_{1} = I_{2} = I_{3} = I \)</li>
+      <li>\( I = \dfrac{V}{Z} \)</li>
+      <li>\( I_{N} = 0 \)</li>
+      <li>\( P = 3\,V\,I\,\cos\varphi = \sqrt{3}\,U\,I\,\cos\varphi \)</li>
+      <li>\( Q = 3\,V\,I\,\sin\varphi = \sqrt{3}\,U\,I\,\sin\varphi \)</li>
+      <li>\( S = 3\,V\,I = \sqrt{3}\,U\,I \)</li>
+    </ul>
+
+    <div class="sub">Montage triangle</div>
+    <ul class="relations">
+      <li>\( J_{12} = J_{23} = J_{31} = J \) ; \( J = \dfrac{U}{Z} \)</li>
+      <li>\( I_{1} = I_{2} = I_{3} = I \) ; \( I = \sqrt{3}\,J \)</li>
+      <li>\( P = 3\,U\,J\,\cos\varphi = \sqrt{3}\,U\,I\,\cos\varphi \)</li>
+      <li>\( Q = 3\,U\,J\,\sin\varphi = \sqrt{3}\,U\,I\,\sin\varphi \)</li>
+      <li>\( S = 3\,U\,J = \sqrt{3}\,U\,I \)</li>
+    </ul>
+
+    <div class="sub">Méthode des 2 wattmètres</div>
+    <ul class="relations">
+      <li>\( P_{1} = U\,I\,\cos\!\left(\varphi - \dfrac{\pi}{6}\right) \)</li>
+      <li>\( P_{2} = U\,I\,\cos\!\left(\varphi + \dfrac{\pi}{6}\right) \)</li>
+      <li>\( P = P_{1} + P_{2} \)</li>
+      <li>\( Q = \sqrt{3}\,(P_{1} - P_{2}) \)</li>
+    </ul>
+
+    <div class="sub">Relèvement du cos φ</div>
+    <ul class="relations">
+      <li>Capacités en triangle : \( C_{\Delta} = \dfrac{P\,(\tan\varphi - \tan\varphi')}{3\,U^{2}\,\omega} \)</li>
+      <li>Capacités en étoile : \( C_{Y} = \dfrac{P\,(\tan\varphi - \tan\varphi')}{3\,V^{2}\,\omega} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 3. Transformateur monophasé -->
+<section class="lesson c3" id="l3">
+  <h2><span class="num">3</span> Transformateur monophasé</h2>
+  <div class="body">
+
+    <div class="sub">Valeurs nominales</div>
+    <ul class="relations">
+      <li>\( S_{N} = U_{1N}\,I_{1N} = U_{2N}\,I_{2N} \)</li>
+    </ul>
+
+    <div class="sub">Formule de Boucherot</div>
+    <ul class="relations">
+      <li>\( U_{1} = 4{,}44\,B_{max}\,N_{1}\,S\,f \)</li>
+      <li>\( U_{2} = 4{,}44\,B_{max}\,N_{2}\,S\,f \)</li>
+    </ul>
+
+    <div class="sub">Rapport de transformation</div>
+    <ul class="relations">
+      <li>\( m = \dfrac{U_{20}}{U_{1}} = \dfrac{I_{1cc}}{I_{2cc}} = \dfrac{N_{2}}{N_{1}} \)</li>
+    </ul>
+
+    <div class="sub">Détermination des éléments R<sub>S</sub> et X<sub>S</sub></div>
+    <ul class="relations">
+      <li>\( R_{S} = \dfrac{P_{1cc}}{I_{2cc}^{\,2}} \)</li>
+      <li>\( Z_{S} = \dfrac{m\,U_{1cc}}{I_{2cc}} \)</li>
+      <li>\( X_{S} = \sqrt{Z_{S}^{\,2} - R_{S}^{\,2}} \)</li>
+    </ul>
+
+    <div class="sub">Chute de tension ΔU<sub>2</sub></div>
+    <ul class="relations">
+      <li>\( \Delta U_{2} = R_{S}\,I_{2}\,\cos\varphi_{2} + X_{S}\,I_{2}\,\sin\varphi_{2} \)</li>
+    </ul>
+
+    <div class="sub">Rendement</div>
+    <ul class="relations">
+      <li>\( \eta = \dfrac{P_{2}}{P_{1}} = \dfrac{U_{2}\,I_{2}\,\cos\varphi_{2}}{U_{2}\,I_{2}\,\cos\varphi_{2} + P_{10} + R_{S}\,I_{2}^{\,2}} \)</li>
+      <li>Pertes cuivre : \( R_{S}\,I_{2}^{\,2} \)</li>
+      <li>Pertes fer : \( P_{10} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 4. Alternateur triphasé -->
+<section class="lesson c4" id="l4">
+  <h2><span class="num">4</span> Alternateur triphasé</h2>
+  <div class="body">
+
+    <div class="sub">Fréquence</div>
+    <ul class="relations">
+      <li>\( f = p \cdot n \)</li>
+    </ul>
+
+    <div class="sub">Modèle équivalent d'une phase</div>
+    <ul class="relations">
+      <li>\( \underline{V} = \underline{E} - R\,\underline{I} - j\,X_{S}\,\underline{I} \)</li>
+    </ul>
+
+    <div class="sub">Bilan des puissances</div>
+    <ul class="relations">
+      <li>\( P_{m} = C \cdot \Omega_{S} \)</li>
+      <li>\( P_{ex} = U_{e}\,I_{e} \)</li>
+      <li>\( P_{jox} = U_{e}\,I_{e}^{\,2} \)</li>
+      <li>\( P_{js} = 3\,r\,I^{\,2} \)</li>
+      <li>\( P_{u} = \sqrt{3}\,U\,I\,\cos\varphi \)</li>
+      <li>\( P_{js} = 3\,r\,I^{2}(Y) = 3\,r\,J^{2}(\Delta) = \dfrac{3}{2}\,R\,I^{2} \) (∀ couplage)</li>
+      <li>\( P_{jex} = U_{e}\,I_{e} = r_{e}\,I_{e}^{\,2} \)</li>
+      <li>\( P_{m} = C_{M} \cdot \Omega_{S} \)</li>
+      <li>\( P_{m} = P_{u} + \sum pertes = P_{u} + P_{ex} + P_{m\acute{e}c} + P_{fs} + P_{js} \)</li>
+      <li>\( P_{a} = P_{m} + P_{ex} \)</li>
+    </ul>
+
+    <div class="sub">Rendement</div>
+    <ul class="relations">
+      <li>\( \eta = \dfrac{P_{u}}{P_{a}} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 5. Moteur synchrone triphasé -->
+<section class="lesson c5" id="l5">
+  <h2><span class="num">5</span> Moteur synchrone triphasé</h2>
+  <div class="body">
+
+    <div class="sub">Vitesse de synchronisme</div>
+    <ul class="relations">
+      <li>\( n_{S} = \dfrac{f}{p} \)</li>
+    </ul>
+
+    <div class="sub">Schéma équivalent</div>
+    <ul class="relations">
+      <li>\( \underline{V} = \underline{E} + R\,\underline{I} + j\,X_{S}\,\underline{I} \)</li>
+    </ul>
+
+    <div class="sub">Puissance et rendement</div>
+    <ul class="relations">
+      <li>\( P_{a} = \sqrt{3}\,U\,I\,\cos\varphi \)</li>
+      <li>\( P_{u} = P_{a} - \sum pertes \)</li>
+      <li>\( \eta = \dfrac{P_{u}}{P_{a}} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 6. Moteur asynchrone triphasé -->
+<section class="lesson c6" id="l6">
+  <h2><span class="num">6</span> Moteur asynchrone triphasé</h2>
+  <div class="body">
+
+    <div class="sub">Caractéristiques</div>
+    <ul class="relations">
+      <li>\( n_{S} = \dfrac{f}{p} \)</li>
+      <li>Glissement : \( g = \dfrac{n_{S} - n}{n_{S}} \)</li>
+      <li>Vitesse du rotor : \( n = n_{S}\,(1 - g) \)</li>
+      <li>Fréquence des courants rotoriques : \( f_{r} = g \cdot f \)</li>
+    </ul>
+
+    <div class="sub">Caractéristique à vide</div>
+    <ul class="relations">
+      <li>\( n_{0} \approx n_{S} \)</li>
+      <li>\( P_{0} = p_{m} + p_{js0} + p_{fs} \)</li>
+    </ul>
+
+    <div class="sub">Couple</div>
+    <ul class="relations">
+      <li>\( C_{u} = k \cdot g = a \cdot n + b \) avec \( a < 0 \)</li>
+      <li>Équilibre : \( n = cte \;\Rightarrow\; C_{u} = C_{r} \)</li>
+    </ul>
+
+    <div class="sub">Bilan des puissances</div>
+    <ul class="relations">
+      <li>\( P_{a} = \sqrt{3}\,U\,I\,\cos\varphi \)</li>
+      <li>\( P_{u} = C_{u} \cdot \Omega \)</li>
+      <li>\( P_{u} = P_{a} - \sum pertes \)</li>
+      <li>Pertes constantes : \( P_{c} = P_{fs} + P_{m\acute{e}c} \)</li>
+      <li>Puissance transmise au rotor : \( P_{tr} = P_{a} - P_{js} - P_{fs} = C_{e}\cdot\Omega \)</li>
+      <li>Pertes joules au rotor : \( P_{jr} = g \cdot P_{tr} \)</li>
+      <li>\( P_{js} = 3\,r\,I^{2}(Y) = 3\,r\,J^{2}(\Delta) = \dfrac{3}{2}\,R\,I^{2} \) (∀ couplage)</li>
+    </ul>
+
+    <div class="sub">Rendement</div>
+    <ul class="relations">
+      <li>\( \eta = \dfrac{P_{u}}{P_{a}} = \dfrac{P_{a} - P_{js} - P_{fs} - P_{jr} - P_{m\acute{e}c}}{P_{a}} \)</li>
+    </ul>
+
+    <div class="sub">Démarrage étoile-triangle</div>
+    <ul class="relations">
+      <li>Intensité absorbée : divisée par \( 3 \)</li>
+      <li>Couple de démarrage : divisé par \( 3 \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 7. Moteurs pas à pas -->
+<section class="lesson c7" id="l7">
+  <h2><span class="num">7</span> Moteurs pas à pas</h2>
+  <div class="body">
+
+    <div class="sub">Détermination du nombre de pas / tour</div>
+    <ul class="relations">
+      <li>\( N_{p} = m \cdot p \cdot K_{1} \cdot K_{2} \)</li>
+    </ul>
+
+    <div class="sub">Fréquence et vitesse</div>
+    <ul class="relations">
+      <li>\( f = \dfrac{\text{nombre de pas}}{\text{seconde}} \)</li>
+      <li>\( n = \dfrac{f}{N_{p}} \) (en tr/s)</li>
+    </ul>
+
+    <div class="sub">Modes</div>
+    <ul class="relations">
+      <li>Moteur bipolaire : \( K_{1} = 2 \)</li>
+      <li>Moteur unipolaire : \( K_{1} = 1 \)</li>
+      <li>Mode 1 (excitation individuelle) : \( K_{2} = 1 \)</li>
+      <li>Mode 2 (excitation de 2 bobines) : \( K_{2} = 1 \)</li>
+      <li>Commande asymétrique (demi-pas) : \( K_{2} = 2 \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 8. Convertisseurs statiques -->
+<section class="lesson c8" id="l8">
+  <h2><span class="num">8</span> Convertisseurs statiques</h2>
+  <div class="body">
+
+    <div class="sub">Redresseur monophasé — simple alternance</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{V\sqrt{2}}{\pi} \)</li>
+      <li>\( U = \dfrac{V\sqrt{2}}{2} \)</li>
+      <li>\( V_{Dmax} = V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur monophasé — double alternance PD2</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{2\,V\sqrt{2}}{\pi} \)</li>
+      <li>\( U = V \)</li>
+      <li>\( V_{Dmax} = V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur monophasé — double alternance P2</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{2\,V\sqrt{2}}{\pi} \)</li>
+      <li>\( U = V \)</li>
+      <li>\( V_{Dmax} = 2\,V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur triphasé — simple alternance P3</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{3\sqrt{3}}{2\pi}\,V\sqrt{2} \)</li>
+      <li>\( V_{Dmax} = \sqrt{3}\,V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur triphasé — double alternance PD3</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{3\sqrt{3}}{\pi}\,V\sqrt{2} \)</li>
+      <li>\( V_{Dmax} = \sqrt{3}\,V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur commandé — simple alternance</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{V\sqrt{2}}{\pi}\cdot\dfrac{1+\cos\alpha}{2} \)</li>
+      <li>\( U = \dfrac{V\sqrt{2}}{2}\,\sqrt{\,1 - \dfrac{\alpha}{\pi} + \dfrac{\sin 2\alpha}{2\pi}\,} \)</li>
+      <li>\( v_{Tmax} = V_{Dmax} = V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Redresseur commandé — double alternance pont mixte</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \dfrac{2\,V\sqrt{2}}{\pi}\,\Big(\dfrac{1+\cos\alpha}{2}\Big) \)</li>
+      <li>\( U = V\,\sqrt{\,1 - \dfrac{\alpha}{\pi} + \dfrac{\sin 2\alpha}{2\pi}\,} \)</li>
+      <li>\( v_{Tmax} = V_{Dmax} = V\sqrt{2} \)</li>
+    </ul>
+
+    <div class="sub">Onduleur autonome monophasé — demi-pont</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = 0 \)</li>
+      <li>\( U = V \)</li>
+      <li>\( v_{1} = 2V \)</li>
+    </ul>
+
+    <div class="sub">Onduleur en pont — commande symétrique</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = 0 \)</li>
+      <li>\( U = V \)</li>
+      <li>\( v_{1} = V \)</li>
+    </ul>
+
+    <div class="sub">Onduleur en pont — commande décalée</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = 0 \)</li>
+      <li>\( U = V\,\sqrt{\,1 - \dfrac{\alpha}{\pi}\,} = V\,\sqrt{\,1 - \dfrac{2\,t_{0}}{T}\,} \)</li>
+      <li>\( v_{1} = V \)</li>
+    </ul>
+
+    <div class="sub">Hacheur série à transistor</div>
+    <ul class="relations">
+      <li>\( \langle u \rangle = \alpha\,V \)</li>
+      <li>\( V_{T} = V \)</li>
+    </ul>
+
+    <div class="sub">Gradateur monophasé</div>
+    <ul class="relations">
+      <li>Commande par la phase : \( U = V\,\sqrt{\,1 - \dfrac{\alpha}{\pi} + \dfrac{\sin 2\alpha}{2\pi}\,} \)</li>
+      <li>Commande par train d'ondes : \( U = V\,\sqrt{\alpha} \) avec \( \alpha = \dfrac{T_{ON}}{T_{C}} \)</li>
+      <li>\( \langle u \rangle = 0 \)</li>
+      <li>\( v_{Tmax} = V\sqrt{2} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 9. Transformateur triphasé -->
+<section class="lesson c1" id="l9">
+  <h2><span class="num">9</span> Transformateur triphasé</h2>
+  <div class="body">
+
+    <div class="sub">Plaque signalétique</div>
+    <ul class="relations">
+      <li>\( S = \sqrt{3}\,U\,I \)</li>
+      <li>Tension de court-circuit : \( U_{CC}\,\% = \dfrac{100\,U_{1CC}}{U_{1}} \)</li>
+    </ul>
+
+    <div class="sub">Rapport de transformation</div>
+    <ul class="relations">
+      <li>Dd ou Yy : \( M = \dfrac{U_{ab0}}{U_{AB}} = \dfrac{N_{2}}{N_{1}} \)</li>
+      <li>Dy : \( M = \dfrac{U_{ab0}}{U_{AB}} = \dfrac{1}{\sqrt{3}}\cdot\dfrac{N_{2}}{N_{1}} \)</li>
+      <li>Yd ou Yz : \( M = \dfrac{U_{ab0}}{U_{AB}} = \sqrt{3}\cdot\dfrac{N_{2}}{N_{1}} \)</li>
+    </ul>
+
+    <div class="sub">Indice horaire</div>
+    <ul class="relations">
+      <li>\( I = \dfrac{\theta}{30^{\circ}} \) avec \( 0 \le I \le 11 \) (entier)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 10. Protection des personnes -->
+<section class="lesson c2" id="l10">
+  <h2><span class="num">10</span> Protection des personnes</h2>
+  <div class="body">
+
+    <div class="sub">Régime TT</div>
+    <ul class="relations">
+      <li>\( I_{d} = \dfrac{V}{R_{u} + R_{n}} \)</li>
+      <li>\( U_{c} = R_{u}\cdot I_{d} \)</li>
+      <li>\( U_{c}\,(\text{dangereuse}) > U_{limite} \)</li>
+      <li>\( U_{limite} = 50\,V \)</li>
+      <li>\( I_{\Delta N} \le \dfrac{U_{limite}}{R_{u}} \)</li>
+    </ul>
+
+    <div class="sub">Régime TN</div>
+    <ul class="relations">
+      <li>\( I_{d} = I_{CC} = \dfrac{0{,}8\,V}{R_{ph} + R_{pe}} \)</li>
+      <li>Pour un disjoncteur : \( I_{mag} < \dfrac{0{,}8\,V\,S_{ph}}{L\,\rho\,(1+m)} \)</li>
+      <li>Pour un fusible : \( I_{fusion} < \dfrac{0{,}8\,V\,S_{ph}}{L\,\rho\,(1+m)} \)</li>
+      <li>\( m = \dfrac{S_{ph}}{S_{pe}} \)</li>
+    </ul>
+
+    <div class="sub">Régime IT</div>
+    <ul class="relations">
+      <li>\( I_{d} = \dfrac{V}{R_{a} + Z + R_{b}} \)</li>
+      <li>\( I_{d} \approx 0 \)</li>
+      <li>\( U_{c} = R_{a}\cdot I_{d} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 11. Protection électrique des matériels -->
+<section class="lesson c7" id="l11">
+  <h2><span class="num">11</span> Protection électrique des matériels</h2>
+  <div class="body">
+
+    <div class="sub">Intensités caractéristiques</div>
+    <ul class="relations">
+      <li>Surcharge : \( I \) de \( 1 \) à \( 10\,I_{n} \)</li>
+      <li>Court-circuit : \( I \) de \( 10 \) à \( 1000\,I_{n} \)</li>
+    </ul>
+
+  </div>
+</section>
+
+<footer>
+  Cours résumés A.D.C. — 2 STE · Prof : Said-CHARI · mise en forme : Genspark
+</footer>
+
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
